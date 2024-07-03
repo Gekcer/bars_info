@@ -71,4 +71,4 @@ class BarsResource(Resource):
                 } for bar in bars
             ]
         }
-        return bars_json
+        return bars_json, 200
