@@ -1,5 +1,6 @@
 # bars_info
-Приложение Flask для просмотра информации о барах.
+Приложение Flask для просмотра информации о барах. Проект предназначен, чтобы обучиться 
+основам docker-compose
 
 ## Docker-compose
 
@@ -51,3 +52,6 @@ docker exec -it {container_id} bash
 ```commandline
 psql -U postgres -d krasnodarbars -f /krasnodarbars.sql
 ```
+
+В результате удалось запустить приложение на другом компьютере в друго сети только с помощью docker-compose. 
+В дальнейшем можно поиска, возможно ли передавать состояние базы данных Postgres каким-то другим способом.
