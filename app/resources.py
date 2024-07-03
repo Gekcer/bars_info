@@ -55,3 +55,20 @@ class BarResource(Resource):
             except:
                 return {'message': f'Не удалось удалить бар из базы'}, 500
         return {'message': 'Бар не найден'}
+
+
+class BarsResource(Resource):
+    def get(self):
+        bars = BarModel.query.all()
+        bars_json = {
+            'bars': [
+                {
+                    'id': bar.id,
+                    'name': bar.name,
+                    'inst_url': bar.inst_url,
+                    'vk_url': bar.vk_url,
+                    'tg_url': bar.tg_url
+                } for bar in bars
+            ]
+        }
+        return bars_json
